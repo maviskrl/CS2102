@@ -3,26 +3,78 @@
   <head>
 		<!-- Page Title -->
     <title>CS2102 Starter Guide</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-		
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 		<!-- CSS for Styling -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-		
-		<!-- JavaScript for Interactivity -->
+			<!-- JavaScript for Interactivity -->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
   </head>
-  <body>
-    <h1>CS2102 Starter Guide</h1>
-    <p>Welcome to CS2102 Starter Guide</p><br />
-    <a href="/about">About</a>
-    <a href="/table">Table</a>
-    <a href="/user">User</a>
-    <a href="/loops">Loops</a>
-    <a href="/forms">Forms</a>
-    <a href="/insert">Insert</a>
-    <p>/select crashes App for now</p>
-		<p>by: Adi Yoga S. Prabawa
+
+  <body class="text-center">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="/about">About</a>
+      <a href="/table">Table</a>
+      <a href="/forms">Forms</a>
+      <a href="/insert#">Insert</a>
+    </div>
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 onclick="openNav()" class="masthead-brand">Grab <%= title%></h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href="/about">About</a>
+        <a class="nav-link active" href="/">Home</a>
+        <a class="nav-link active" id="quit">Quit</a>
+      </nav>
+    </div>
+    </header>
+
+    <main role="main" class="inner cover">
+      <p id="quest-denied" class="lead">What are you doing today?</p>
+      <p class="nav justify-content-center">
+          <button type="button" id="quest_trade" class="btn btn-lg btn-secondary">Driving</button>
+      </p>
+      <br><br>
+      <button type="button" class="lead btn btn-secondary btn-lg">Extra in other ppl car</button>
+    </main>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <!--Blacklist search-->
+        <p class="lead" id="blacklist_search_response"><strong>Search for something</strong></p>
+        <div class="input-group mb-3">
+          <input type="text" id="blacklist_search" class="form-control" placeholder="Full BattleTag" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="submitSearch">Search</button>
+          </div>
+        </div>
+      <p>Some template footer text, title variable = <%= title%></p>
+    </div>
+    </footer>
+
+    </div>
   </body>
+<script>
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  document.body.style.backgroundColor = "white";
+} 
+</script>
 </html>
