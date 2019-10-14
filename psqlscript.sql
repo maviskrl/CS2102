@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS Drives CASCADE;
 DROP TABLE IF EXISTS Rides CASCADE;
 DROP TABLE IF EXISTS Bids CASCADE;
 DROP TABLE IF EXISTS Ratings CASCADE;
-DROP TABLE IF EXISTS Favourites CASCADE;
+DROP TABLE IF EXISTS FavouriteDrivers CASCADE;
 DROP TABLE IF EXISTS Bookmarks CASCADE;
 
 CREATE TABLE Users (
@@ -38,7 +38,7 @@ CREATE TABLE Admin (
 
 CREATE TABLE Verify (
 	auname varchar(100) REFERENCES Admin,
-	duname varchar(100) REFERENCES Driver,
+	duname varchar(100) REFERENCES Drive	r,
 	since date
 );
 
@@ -62,6 +62,7 @@ CREATE TABLE Rides (
 	dropoff varchar(100) NOT NULL,
 	ride_date date NOT NULL,
 	start_time time NOT NULL,
+	is_complete BOOLEAN DEFAULT FALSE,
 	PRIMARY KEY(username, pickup, dropoff, ride_date, start_time)
 );
 
@@ -79,24 +80,31 @@ CREATE TABLE Bids (
 	CHECK (puname <> duname)
 );
 
-CREATE TABLE Ratings (
+-- Edited
+	CREATE TABLE Ratings (
+		puname varchar(100),
+		duname varchar(100),
+		rating integer, 
+		pickup varchar(100) NOT NULL,
+		dropoff varchar(100) NOT NULL,
+		ride_date date NOT NULL,
+		start_time time NOT NULL,
+		CHECK ((rating IS NULL) OR (rating >=0 AND rating <= 5)),
+		FOREIGN KEY (puname, duname, pickup, dropoff, ride_date, start_time) REFERENCES Bids,
+		PRIMARY KEY (puname, duname, pickup, dropoff, ride_date, start_time, rating)
+	);
+
+-- Edited
+CREATE TABLE FavouriteDrivers (
 	puname varchar(100) REFERENCES Passenger,
 	duname varchar(100) REFERENCES Driver,
-	rating integer, 
-	CHECK ((rating IS NULL) OR (rating >=0 AND rating <= 5)),
 	PRIMARY KEY (puname, duname)
 );
 
-CREATE TABLE Favourites (
-	pickup varchar(100),
-	dropoff varchar(100),
-	PRIMARY KEY (pickup, dropoff)
-);
-
+-- Edited		
 CREATE TABLE Bookmarks (
 	puname varchar(100) REFERENCES Passenger,
-	pickup varchar(100),
-	dropoff varchar(100),
-	FOREIGN KEY (pickup, dropoff) REFERENCES Favourites,
+	pickup varchar(100) NOT NULL,
+	dropoff varchar(100) NOT NULL,
 	PRIMARY KEY (puname, pickup, dropoff)
 );
