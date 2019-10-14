@@ -38,7 +38,7 @@ CREATE TABLE Admin (
 
 CREATE TABLE Verify (
 	auname varchar(100) REFERENCES Admin,
-	duname varchar(100) REFERENCES Drive	r,
+	duname varchar(100) REFERENCES Driver,
 	since date
 );
 
@@ -62,6 +62,7 @@ CREATE TABLE Rides (
 	dropoff varchar(100) NOT NULL,
 	ride_date date NOT NULL,
 	start_time time NOT NULL,
+	capacity integer NOT NULL,
 	is_complete BOOLEAN DEFAULT FALSE,
 	PRIMARY KEY(username, pickup, dropoff, ride_date, start_time)
 );
