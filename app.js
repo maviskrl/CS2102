@@ -14,7 +14,7 @@ var indexRouter = require('./routes/index');
 var driverRouter = require('./routes/driver');
 var awaitingApprovalRouter = require('./routes/awaitingApproval');
 var registerDriverRouter = require('./routes/registerDriver');
-
+var homepagerouter = require('./routes/homepage');
 
 /* --- V2: Adding Web Pages --- */
 var aboutRouter = require('./routes/about');
