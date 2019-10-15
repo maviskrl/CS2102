@@ -10,7 +10,7 @@ const pool = new Pool({
 router.get('/', function(req, res, next) {
 	res.render('registerDriver', { title: 'Register driver' });
 });
-SKDJNFSDN
+
 /* SQL Query */
 var sql_query1 = 'INSERT INTO Car VALUES';
 var sql_query2 = 'INSERT INTO Drives VALUES';
