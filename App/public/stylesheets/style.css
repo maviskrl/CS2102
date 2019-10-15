@@ -185,3 +185,25 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+/* button for homepage standard size and in center of the page*/
+.homepagebutton {
+    width: 300px !important;
+    margin-bottom: 15rem;
+}
+
+/* make the display text in the middle */
+.awaitingApproval {
+  text-align: center;
+  margin-bottom: 11rem;
+}
+
+/* For titles that are under the navbar */
+.title {
+  margin-bottom: 250px;
+}
+
+/* searchbat at the top of the page */
+.searchbar {
+  margin-bottom: 250px;
+}

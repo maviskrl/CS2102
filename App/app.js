@@ -7,8 +7,13 @@ var logger = require('morgan');
 /* --- V7: Using dotenv     --- */
 require('dotenv').config();
 
+/* PAGES FOR THE PROJECT */
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var driverRouter = require('./routes/driver');
+var awaitingApprovalRouter = require('./routes/awaitingApproval');
+var registerDriverRouter = require('./routes/registerDriver');
+var ridesRouter = require('./routes/rides');
 
 /* --- V2: Adding Web Pages --- */
 var aboutRouter = require('./routes/about');
@@ -43,8 +48,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/* FOR PROJECT */
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/driver', driverRouter);
+app.use('/awaitingApproval', awaitingApprovalRouter);
+app.use('/registerDriver', registerDriverRouter);
+app.use('/rides', ridesRouter);
+
 
 /* --- V2: Adding Web Pages --- */
 app.use('/about', aboutRouter);
