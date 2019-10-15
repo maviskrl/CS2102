@@ -8,8 +8,9 @@ DROP TABLE IF EXISTS Drives CASCADE;
 DROP TABLE IF EXISTS Rides CASCADE;
 DROP TABLE IF EXISTS Bids CASCADE;
 DROP TABLE IF EXISTS Ratings CASCADE;
-DROP TABLE IF EXISTS FavouriteDrivers CASCADE;
+DROP TABLE IF EXISTS Likes CASCADE;
 DROP TABLE IF EXISTS Bookmarks CASCADE;
+DROP TABLE IF EXISTS Messages CASCADE;
 
 CREATE TABLE Users (
 	username varchar(100),
@@ -96,7 +97,7 @@ CREATE TABLE Bids (
 	);
 
 -- Edited
-CREATE TABLE FavouriteDrivers (
+CREATE TABLE Likes (
 	puname varchar(100) REFERENCES Passenger,
 	duname varchar(100) REFERENCES Driver,
 	PRIMARY KEY (puname, duname)
@@ -110,7 +111,7 @@ CREATE TABLE Bookmarks (
 	PRIMARY KEY (puname, pickup, dropoff)
 );
 
-CREATED TABLE MESSAGES (
+CREATED TABLE Messages (
 	sender varchar(100) REFERENCES User,
 	receiver varchar(100) REFERENCES User,
 	message varchar (500) NOT NULL,
@@ -201,12 +202,12 @@ INSERT INTO Bids VALUES ('J', 'E', 'Central', 'East', '1-1-2019', '09:00:00','8'
 INSERT INTO Ratings VALUES ('H', 'E', '5', 'Central', 'East', '1-1-2019', '09:00:00');
 INSERT INTO Ratings VALUES ('I', 'E', '2', 'Central', 'East', '1-1-2019', '09:00:00');
 
-INSERT INTO FavouriteDrivers VALUES ('E', 'A');
-INSERT INTO FavouriteDrivers VALUES ('F', 'B');
-INSERT INTO FavouriteDrivers VALUES ('G', 'C');
-INSERT INTO FavouriteDrivers VALUES ('H', 'D');
-INSERT INTO FavouriteDrivers VALUES ('I', 'E');
-INSERT INTO FavouriteDrivers VALUES ('J', 'A');
+INSERT INTO Likes VALUES ('E', 'A');
+INSERT INTO Likes VALUES ('F', 'B');
+INSERT INTO Likes VALUES ('G', 'C');
+INSERT INTO Likes VALUES ('H', 'D');
+INSERT INTO Likes VALUES ('I', 'E');
+INSERT INTO Likes VALUES ('J', 'A');
 
 
 INSERT INTO Bookmarks VALUES ('F', 'North', 'South');
