@@ -14,6 +14,7 @@ var driverRouter = require('./routes/driver');
 var awaitingApprovalRouter = require('./routes/awaitingApproval');
 var registerDriverRouter = require('./routes/registerDriver');
 var ridesRouter = require('./routes/rides');
+var homepageRouter = require('./routes/homepage')
 
 /* --- V2: Adding Web Pages --- */
 var aboutRouter = require('./routes/about');
@@ -54,7 +55,7 @@ app.use('/driver', driverRouter);
 app.use('/awaitingApproval', awaitingApprovalRouter);
 app.use('/registerDriver', registerDriverRouter);
 app.use('/rides', ridesRouter);
-
+app.use('/homepage', homepageRouter);
 
 /* --- V2: Adding Web Pages --- */
 app.use('/about', aboutRouter);

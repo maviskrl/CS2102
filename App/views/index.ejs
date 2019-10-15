@@ -2,43 +2,41 @@
 <html>
   <head>
 		<!-- Page Title -->
-    <title>CS2102 Starter Guide</title>
+    <title>grab express - login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<!-- CSS for Styling -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 			<!-- JavaScript for Interactivity -->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <link rel='stylesheet' href='/stylesheets/login.css'/>
 
   </head>
 
-  <body class="text-center">
-    
-    <div class="d-flex w-100 h-100 mx-auto flex-column">
-    <header class="masthead mb-auto">
-    <div class="inner">
-      <h3 class="masthead-brand" data-desc="You are already at homepage!">Grab <%= title%></h3>
-      <nav class="nav nav-masthead justify-content-center">
-      <a href="/bookmarks" class="nav-link active">Bookmarks</a>
-      <a href="/favourite_drivers" class="nav-link active">Favourite drivers</a>
-      <a class="nav-link active dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My profile</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="/insert">My details</a>
-            <a class="dropdown-item" >History</a>
-          </div>
-    </header>
-
-    <main role="main" class="inner cover">
-      <p id="quest-denied" class="lead">Hi there _____, What are you doing today?</p>
-        <div class="btn-group masthead" role="group" aria-label="buttons">
-          <button type="button" onclick="window.location.href='/driver'" class="btn btn-light btn-lg mr-3 homepagebutton">driving</button>
-          <button type="button" onclick="window.location.href='/rides'" class="btn btn-dark btn-lg homepagebutton">extra in other ppl car</button>
-        </div>
-    </main>
-
+<div class="sidenav">
+    <div class="login-main-text">
+    <h2>Grab <br> Adi Yoga <%= title%></h2>
+    <p>Login or register from here to access.</p>
     </div>
-  </body>
-</html>
+</div>
+
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+    <div class="login-form">
+        <form>
+            <div class="form-group">
+                <label>User Name</label>
+                <input type="text" class="form-control" placeholder="User Name">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" placeholder="Password">
+            </div>
+            <button type="button" onclick="window.location.href = '/homepage'" class="btn btn-black">Login</button>
+            <button type="button" onclick="window.location.href = '/about'" class="btn btn-secondary">Register</button>
+        </form>
+    </div>
+    </div>
+</div>
