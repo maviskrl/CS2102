@@ -20,7 +20,7 @@
     <div class="d-flex w-100 h-100 mx-auto flex-column">
     <header class="masthead mb-auto">
     <div class="inner">
-      <h3 onclick="window.location.href='/'" class="masthead-brand" data-desc="go homepage">grab express</h3>
+      <h3 onclick="window.location.href='/homepage'" class="masthead-brand" data-desc="go homepage">grab express</h3>
       <nav class="nav nav-masthead justify-content-center">
       <a href="/bookmarks" class="nav-link active">Bookmarks</a>
       <a href="/favourite_drivers" class="nav-link active">Favourite drivers</a>
@@ -37,7 +37,15 @@
         <form>
           <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">Carplate Number</label>
-            <input class="form-control col-sm-7" id="name" placeholder="Enter your carplate number">
+            <input class="form-control col-sm-7" id="carplateNo" placeholder="Enter your carplate number">
+          </div>
+          <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Car model</label>
+            <input class="form-control col-sm-7" id="carModel" placeholder="Enter your car model">
+          </div>
+          <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Capacity</label> 
+            <input class="form-control col-sm-7" id="carCapacity" placeholder="Enter your car Capacity">
           </div>
           <button type="submit" class="btn btn-primary" onclick="inputDriverDetails()">Submit</button>
        </form>
