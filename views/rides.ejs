@@ -32,15 +32,12 @@
     </header>
 
     <main role="main" class="awaitingApproval">
-      <div>
-        <H1 class="text-center title" ><%= title%></H1>
-        <form>
-          <div class="form-group row">
-            <label for="name" class="col-sm-2 col-form-label">Carplate Number</label>
-            <input class="form-control col-sm-7" id="name" placeholder="Enter your carplate number">
-          </div>
-          <button type="submit" class="btn btn-primary" onclick="inputDriverDetails()">Submit</button>
-       </form>
+       <div class="input-group title">
+        <input type="text" aria-label="First name" class="form-control" placeholder="start location">
+        <input type="text" aria-label="Last name" class="form-control" placeholder="end location">
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-secondary" type="button" id="Search">Search</button>
+        </div>
       </div>
     </main>
 
