@@ -110,6 +110,14 @@ CREATE TABLE Bookmarks (
 	PRIMARY KEY (puname, pickup, dropoff)
 );
 
+CREATED TABLE MESSAGES (
+	sender varchar(100) REFERENCES User,
+	receiver varchar(100) REFERENCES User,
+	message varchar (500) NOT NULL,
+	sent_time time NOT NULL,
+	PRIMARY KEY (sender, receiver, time)
+);
+
 
 INSERT INTO Users VALUES ('A', 'nameA', 'A');
 INSERT INTO Users VALUES ('B', 'nameB', 'B');
@@ -121,6 +129,7 @@ INSERT INTO Users VALUES ('G', 'nameG', 'G');
 INSERT INTO Users VALUES ('H', 'nameH', 'H');
 INSERT INTO Users VALUES ('I', 'nameI', 'I');
 INSERT INTO Users VALUES ('J', 'nameJ', 'J');
+INSERT INTO Users VALUES ('Z', 'nameZ', 'Z');
 
 INSERT INTO Driver VALUES ('A', 'nameA');
 INSERT INTO Driver VALUES ('B', 'nameB');
@@ -134,6 +143,14 @@ INSERT INTO Passenger VALUES ('G', 'nameG');
 INSERT INTO Passenger VALUES ('H', 'nameH');
 INSERT INTO Passenger VALUES ('I', 'nameI');
 INSERT INTO Passenger VALUES ('J', 'nameJ');
+
+INSERT INTO Admin VALUES ('Z', 'nameZ');
+
+INSERT INTO Verify VALUES ('Z', 'A', '1-1-2018');
+INSERT INTO Verify VALUES ('Z', 'B', '1-1-2018');
+INSERT INTO Verify VALUES ('Z', 'C', '1-1-2018');
+INSERT INTO Verify VALUES ('Z', 'D', '1-1-2018');
+INSERT INTO Verify VALUES ('Z', 'E', '1-1-2018');
 
 INSERT INTO Car VALUES ('A100', 'car1', 2);
 INSERT INTO Car VALUES ('B359', 'car2', 4);
@@ -196,4 +213,3 @@ INSERT INTO Bookmarks VALUES ('F', 'North', 'South');
 INSERT INTO Bookmarks VALUES ('G', 'North', 'South');
 INSERT INTO Bookmarks VALUES ('H', 'Central', 'East');
 INSERT INTO Bookmarks VALUES ('I', 'East', 'North');
-
