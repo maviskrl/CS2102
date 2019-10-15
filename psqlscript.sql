@@ -109,3 +109,91 @@ CREATE TABLE Bookmarks (
 	dropoff varchar(100) NOT NULL,
 	PRIMARY KEY (puname, pickup, dropoff)
 );
+
+
+INSERT INTO Users VALUES ('A', 'nameA', 'A');
+INSERT INTO Users VALUES ('B', 'nameB', 'B');
+INSERT INTO Users VALUES ('C', 'nameC', 'C');
+INSERT INTO Users VALUES ('D', 'nameD', 'D');
+INSERT INTO Users VALUES ('E', 'nameE', 'E');
+INSERT INTO Users VALUES ('F', 'nameF', 'F');
+INSERT INTO Users VALUES ('G', 'nameG', 'G');
+INSERT INTO Users VALUES ('H', 'nameH', 'H');
+INSERT INTO Users VALUES ('I', 'nameI', 'I');
+INSERT INTO Users VALUES ('J', 'nameJ', 'J');
+
+INSERT INTO Driver VALUES ('A', 'nameA');
+INSERT INTO Driver VALUES ('B', 'nameB');
+INSERT INTO Driver VALUES ('C', 'nameC');
+INSERT INTO Driver VALUES ('D', 'nameD');
+INSERT INTO Driver VALUES ('E', 'nameE');
+
+INSERT INTO Passenger VALUES ('E', 'nameE');
+INSERT INTO Passenger VALUES ('F', 'nameF');
+INSERT INTO Passenger VALUES ('G', 'nameG');
+INSERT INTO Passenger VALUES ('H', 'nameH');
+INSERT INTO Passenger VALUES ('I', 'nameI');
+INSERT INTO Passenger VALUES ('J', 'nameJ');
+
+INSERT INTO Car VALUES ('A100', 'car1', 2);
+INSERT INTO Car VALUES ('B359', 'car2', 4);
+INSERT INTO Car VALUES ('C856', 'car3', 6);
+INSERT INTO Car VALUES ('D874', 'car1', 2);
+INSERT INTO Car VALUES ('E390', 'car2', 4);
+
+INSERT INTO Drives VALUES ('A', 'A100');
+INSERT INTO Drives VALUES ('B', 'B359');
+INSERT INTO Drives VALUES ('C', 'C856');
+INSERT INTO Drives VALUES ('D', 'D874');
+INSERT INTO Drives VALUES ('E', 'E390');
+
+INSERT INTO Rides VALUES ('A', 'East', 'North', '1-1-2019', '12:00:00', 2);
+INSERT INTO Rides VALUES ('A', 'East', 'North', '1-1-2019', '16:00:00', 2);
+INSERT INTO Rides VALUES ('B', 'West', 'Central', '1-1-2019', '14:00:00', 2);
+INSERT INTO Rides VALUES ('B', 'West', 'Central', '1-1-2019', '16:00:00', 2);
+INSERT INTO Rides VALUES ('C', 'North', 'South', '1-1-2019', '16:00:00', 2);
+INSERT INTO Rides VALUES ('D', 'South', 'West', '1-1-2019', '12:00:00', 2);
+INSERT INTO Rides VALUES ('E', 'Central', 'East', '1-1-2019', '14:00:00', 2);
+
+-- test for driver history
+INSERT INTO Rides VALUES ('E', 'Central', 'East', '1-1-2019', '09:00:00', 2, true);
+
+-- test for bid > capacity + different prices
+INSERT INTO Bids VALUES ('E', 'A', 'East', 'North', '1-1-2019', '12:00:00', '10');
+INSERT INTO Bids VALUES ('F', 'A', 'East', 'North', '1-1-2019', '12:00:00', '9');
+INSERT INTO Bids VALUES ('G', 'A', 'East', 'North', '1-1-2019', '12:00:00', '8');
+
+INSERT INTO Bids VALUES ('H', 'A', 'East', 'North', '1-1-2019', '16:00:00', '10');
+INSERT INTO Bids VALUES ('I', 'A', 'East', 'North', '1-1-2019', '16:00:00', '9');
+INSERT INTO Bids VALUES ('J', 'A', 'East', 'North', '1-1-2019', '16:00:00', '8');
+
+-- test for bid < capacity
+INSERT INTO Bids VALUES ('E', 'B', 'West', 'Central', '1-1-2019', '14:00:00', '10');
+
+-- test for all 3 bid same price same ride but > capacity
+INSERT INTO Bids VALUES ('E', 'C', 'North', 'South', '1-1-2019', '16:00:00', '10');
+INSERT INTO Bids VALUES ('F', 'C', 'North', 'South', '1-1-2019', '16:00:00', '10');
+INSERT INTO Bids VALUES ('G', 'C', 'North', 'South', '1-1-2019', '16:00:00', '10');
+
+-- test for is_win = true for history
+INSERT INTO Bids VALUES ('H', 'E', 'Central', 'East', '1-1-2019', '09:00:00','10', true);
+INSERT INTO Bids VALUES ('I', 'E', 'Central', 'East', '1-1-2019', '09:00:00','9', true);
+INSERT INTO Bids VALUES ('J', 'E', 'Central', 'East', '1-1-2019', '09:00:00','8');
+
+
+INSERT INTO Ratings VALUES ('H', 'E', '5', 'Central', 'East', '1-1-2019', '09:00:00');
+INSERT INTO Ratings VALUES ('I', 'E', '2', 'Central', 'East', '1-1-2019', '09:00:00');
+
+INSERT INTO FavouriteDrivers VALUES ('E', 'A');
+INSERT INTO FavouriteDrivers VALUES ('F', 'B');
+INSERT INTO FavouriteDrivers VALUES ('G', 'C');
+INSERT INTO FavouriteDrivers VALUES ('H', 'D');
+INSERT INTO FavouriteDrivers VALUES ('I', 'E');
+INSERT INTO FavouriteDrivers VALUES ('J', 'A');
+
+
+INSERT INTO Bookmarks VALUES ('F', 'North', 'South');
+INSERT INTO Bookmarks VALUES ('G', 'North', 'South');
+INSERT INTO Bookmarks VALUES ('H', 'Central', 'East');
+INSERT INTO Bookmarks VALUES ('I', 'East', 'North');
+
